@@ -11,6 +11,9 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
     var path = this.props.location.pathname.split('/')[1];
+    if(path==null||path==''){
+      path=OVERVIEW_URL;
+    }
     this.state = {
       path:path
     }

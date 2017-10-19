@@ -16,7 +16,7 @@ export default class Logout extends Component {
         </div>
                     <div className="modal-footer">
                         <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <a className="btn btn-primary" href="login.html">Logout</a>
+                        <a className="btn btn-primary" href="login">Logout</a>
                     </div>
                 </div>
             </div>

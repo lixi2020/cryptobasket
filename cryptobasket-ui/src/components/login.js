@@ -29,11 +29,11 @@ export default class Login extends Component {
                                 </div>
                             </div>
 
-                            <a className="btn btn-primary btn-block" href="index.html">Login</a>
+                            <a className="btn btn-primary btn-block" href="overview">Login</a>
                         </form>
                         <div className="text-center">
-                            <a className="d-block small mt-3" href="register.html">Register an Account</a>
-                            <a className="d-block small" href="forgot-password.html">Forgot Password?</a>
+                            <a className="d-block small mt-3" href="register">Register an Account</a>
+                            {/* <a className="d-block small" href="forgot-password.html">Forgot Password?</a> */}
                         </div>
                     </div>
                 </div>

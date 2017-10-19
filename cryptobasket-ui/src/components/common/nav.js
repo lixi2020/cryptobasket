@@ -21,21 +21,21 @@ export default class Nav extends Component {
                             <a className="nav-link" href={OVERVIEW_URL}>
                                 <i className="fa fa-fw fa-dashboard"></i>
                                 <span className="nav-link-text">
-                                    Overview</span>
+                                    &nbsp;Overview</span>
                             </a>
                         </li>
                         <li className={this.props.path==TREND_URL?"nav-item active":"nav-item"} data-toggle="tooltip" data-placement="right" title="Charts">
                             <a className="nav-link" href={TREND_URL}>
                                 <i className="fa fa-fw fa-area-chart"></i>
                                 <span className="nav-link-text">
-                                    Charts</span>
+                                &nbsp;Charts</span>
                             </a>
                         </li>
                         <li className={this.props.path==DETAILS_URL?"nav-item active":"nav-item"} data-toggle="tooltip" data-placement="right" title="Tables">
                             <a className="nav-link" href={DETAILS_URL}>
                                 <i className="fa fa-fw fa-table"></i>
                                 <span className="nav-link-text">
-                                    Tables</span>
+                                &nbsp; Tables</span>
                             </a>
                         </li>
                     </ul>
