@@ -12,8 +12,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @MapperScan("com.cryptobasket.repository.mapper")
 @EnableScheduling
 @EnableCaching
-public class CryptobasketApplicationConfig {
+public class CryptobasketDataApplicationConfig {
 	public static void main(String[] args) {
-		SpringApplication.run(CryptobasketApplicationConfig.class, args);
+		SpringApplication.run(CryptobasketDataApplicationConfig.class, args);
 	}
 }
