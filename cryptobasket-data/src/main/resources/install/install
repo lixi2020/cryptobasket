@@ -1,12 +1,12 @@
-1.Create a file:/etc/systemd/system/cryptobasket.service
+1.Create a file:/etc/systemd/system/cryptobasket-data.service
 
 [Unit]
-Description=cryptobasket
+Description=cryptobasket-data
 After=syslog.target
 
 [Service]
 User=lixishishi
-ExecStart=/home/lixishishi/cryptobasket.jar
+ExecStart=/usr/lib/jvm/default-java/bin/java -jar /home/lixishishi/cryptobasket-data.jar
 SuccessExitStatus=143
 
 [Install]
@@ -14,5 +14,4 @@ WantedBy=multi-user.target
 
 
 2./var/log/cryptobasket.log
-
-service cryptobasket start
+service cryptobasket-data start

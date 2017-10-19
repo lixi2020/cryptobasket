@@ -14,7 +14,7 @@ public class Ticker {
 	private java.math.BigDecimal percentChange1h;
 	private java.math.BigDecimal percentChange24h;
 	private java.math.BigDecimal percentChange7d;
-	private Timestamp createTime;
+	private Timestamp lastUpdateTime;
 
 	public String getNameId() {
 		return nameId;
@@ -104,12 +104,12 @@ public class Ticker {
 		this.percentChange7d = percentChange7d;
 	}
 
-	public Timestamp getCreateTime() {
-		return createTime;
+	public Timestamp getLastUpdateTime() {
+		return lastUpdateTime;
 	}
 
-	public void setCreateTime(Timestamp createTime) {
-		this.createTime = createTime;
+	public void setLastUpdateTime(Timestamp lastUpdateTime) {
+		this.lastUpdateTime = lastUpdateTime;
 	}
 
 	@Override
@@ -117,8 +117,8 @@ public class Ticker {
 		return "Ticker [nameId=" + nameId + ", rank=" + rank + ", priceUSD=" + priceUSD + ", priceBTC=" + priceBTC
 				+ ", volume24hUSD=" + volume24hUSD + ", marketCapUSD=" + marketCapUSD + ", availableSupply="
 				+ availableSupply + ", totalSupply=" + totalSupply + ", percentChange1h=" + percentChange1h
-				+ ", percentChange24h=" + percentChange24h + ", percentChange7d=" + percentChange7d + ", createTime="
-				+ createTime + "]";
+				+ ", percentChange24h=" + percentChange24h + ", percentChange7d=" + percentChange7d
+				+ ", lastUpdateTime=" + lastUpdateTime + "]";
 	}
 
 }

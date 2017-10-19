@@ -26,9 +26,9 @@ public interface CryptoMapper {
 
 	@Insert("INSERT INTO crypto_basket.crypto_ticker_latest"
 			+ "(`nameId`,`rank`,`priceUSD`,`priceBTC`,`volume24hUSD`,`marketCapUSD`,`availableSupply`,`totalSupply`"
-			+ ",`percentChange1h`,`percentChange24h`,`percentChange7d`,`createTime`) "
+			+ ",`percentChange1h`,`percentChange24h`,`percentChange7d`,`lastUpdateTime`) "
 			+ "VALUES(#{nameId},#{rank},#{priceUSD},#{priceBTC},#{volume24hUSD},#{marketCapUSD},#{availableSupply},#{totalSupply},"
-			+ "#{percentChange1h},#{percentChange24h},#{percentChange7d},#{createTime});")
+			+ "#{percentChange1h},#{percentChange24h},#{percentChange7d},#{lastUpdateTime});")
 	void insertTickerLatest(Ticker ticker);
 
 	@Select("SELECT * FROM crypto_basket.crypto_ticker_latest limit #{pageOffset},#{pageSize};")
@@ -36,29 +36,29 @@ public interface CryptoMapper {
 
 	@Insert("INSERT INTO crypto_basket.crypto_ticker_history_min"
 			+ "(`nameId`,`rank`,`priceUSD`,`priceBTC`,`volume24hUSD`,`marketCapUSD`,`availableSupply`,`totalSupply`"
-			+ ",`percentChange1h`,`percentChange24h`,`percentChange7d`,`createTime`) "
+			+ ",`percentChange1h`,`percentChange24h`,`percentChange7d`,`lastUpdateTime`) "
 			+ "VALUES(#{nameId},#{rank},#{priceUSD},#{priceBTC},#{volume24hUSD},#{marketCapUSD},#{availableSupply},#{totalSupply},"
-			+ "#{percentChange1h},#{percentChange24h},#{percentChange7d},#{createTime});")
+			+ "#{percentChange1h},#{percentChange24h},#{percentChange7d},#{lastUpdateTime});")
 	void insertTickerByMin(Ticker ticker);
 
 	@Insert("INSERT INTO crypto_basket.crypto_ticker_history_hour"
 			+ "(`nameId`,`rank`,`priceUSD`,`priceBTC`,`volume24hUSD`,`marketCapUSD`,`availableSupply`,`totalSupply`"
-			+ ",`percentChange1h`,`percentChange24h`,`percentChange7d`,`createTime`) "
+			+ ",`percentChange1h`,`percentChange24h`,`percentChange7d`,`lastUpdateTime`) "
 			+ "VALUES(#{nameId},#{rank},#{priceUSD},#{priceBTC},#{volume24hUSD},#{marketCapUSD},#{availableSupply},#{totalSupply},"
-			+ "#{percentChange1h},#{percentChange24h},#{percentChange7d},#{createTime});")
+			+ "#{percentChange1h},#{percentChange24h},#{percentChange7d},#{lastUpdateTime});")
 	void insertTickerByHour(Ticker ticker);
 
 	@Insert("INSERT INTO crypto_basket.crypto_ticker_history_day"
 			+ "(`nameId`,`rank`,`priceUSD`,`priceBTC`,`volume24hUSD`,`marketCapUSD`,`availableSupply`,`totalSupply`"
-			+ ",`percentChange1h`,`percentChange24h`,`percentChange7d`,`createTime`) "
+			+ ",`percentChange1h`,`percentChange24h`,`percentChange7d`,`lastUpdateTime`) "
 			+ "VALUES(#{nameId},#{rank},#{priceUSD},#{priceBTC},#{volume24hUSD},#{marketCapUSD},#{availableSupply},#{totalSupply},"
-			+ "#{percentChange1h},#{percentChange24h},#{percentChange7d},#{createTime});")
+			+ "#{percentChange1h},#{percentChange24h},#{percentChange7d},#{lastUpdateTime});")
 	void insertTickerByDay(Ticker ticker);
 
 	@Insert("INSERT INTO crypto_basket.crypto_ticker_history_month"
 			+ "(`nameId`,`rank`,`priceUSD`,`priceBTC`,`volume24hUSD`,`marketCapUSD`,`availableSupply`,`totalSupply`"
-			+ ",`percentChange1h`,`percentChange24h`,`percentChange7d`,`createTime`) "
+			+ ",`percentChange1h`,`percentChange24h`,`percentChange7d`,`lastUpdateTime`) "
 			+ "VALUES(#{nameId},#{rank},#{priceUSD},#{priceBTC},#{volume24hUSD},#{marketCapUSD},#{availableSupply},#{totalSupply},"
-			+ "#{percentChange1h},#{percentChange24h},#{percentChange7d},#{createTime});")
+			+ "#{percentChange1h},#{percentChange24h},#{percentChange7d},#{lastUpdateTime});")
 	void insertTickerByMonth(Ticker ticker);
 }

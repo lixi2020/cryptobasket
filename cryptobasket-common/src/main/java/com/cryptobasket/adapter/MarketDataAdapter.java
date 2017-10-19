@@ -31,7 +31,7 @@ public class MarketDataAdapter implements IMarketDataAdapter {
 
 	private Ticker mapExternalTickerToInternalTicker(ExternalTicker externalTicker) {
 		Ticker ticker = new Ticker();
-		ticker.setCreateTime(externalTicker.getLast_updated());
+		ticker.setLastUpdateTime(externalTicker.getLast_updated());
 		ticker.setAvailableSupply(externalTicker.getAvailable_supply());
 		ticker.setMarketCapUSD(externalTicker.getMarket_cap_usd());
 		ticker.setNameId(externalTicker.getId());

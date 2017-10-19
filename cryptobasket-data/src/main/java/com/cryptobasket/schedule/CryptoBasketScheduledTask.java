@@ -21,8 +21,8 @@ public class CryptoBasketScheduledTask {
 	@Autowired
 	private ICryptobasketRepository cryptobasketRepository;
 
-	//@Scheduled(cron = "0 0/2 * * * * ?")
-	@Scheduled(cron = "0 0/2 * * * ?")
+	//@Scheduled(cron = "0 0/1 * * * * ?")
+	@Scheduled(cron = "0 0/5 * * * ?")
 	public void pullTicker() {
 		List<Ticker> tickers = marketDataAdapter.getTickers();
 
