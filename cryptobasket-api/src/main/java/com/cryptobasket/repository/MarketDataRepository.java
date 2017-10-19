@@ -7,21 +7,21 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 
 import com.cryptobasket.pojo.Ticker;
-import com.cryptobasket.repository.mapper.CryptoMapper;
+import com.cryptobasket.repository.mapper.MarketDataMapper;
 
 @Repository
 public class MarketDataRepository implements IMarketDataRepository {
 	@Autowired
-	private CryptoMapper CryptoMapper;
+	private MarketDataMapper marketDataMapper;
 
 	@Override
 	public void getCryptoMetaByNameId(String nameId) {
-		CryptoMapper.getCryptoMetaByNameId(nameId);
+		marketDataMapper.getCryptoMetaByNameId(nameId);
 	}
 
 	@Override
 	@Cacheable("Ticker")
 	public List<Ticker> getTickers(int pageOffset, int pageSize) {
-		return CryptoMapper.getLatestTickers(pageOffset, pageSize);
+		return marketDataMapper.getLatestTickers(pageOffset, pageSize);
 	}
 }
