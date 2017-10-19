@@ -27,3 +27,4 @@ nbdist/
 =======
 .nb-gradle/
 >>>>>>> branch 'master' of https://github.com/lixi2020/cryptobasket-api.git
+/.DS_Store
