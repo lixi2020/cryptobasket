@@ -6,7 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
 
-import com.cryptobasket.adapter.datacontract.ExternalTicker;
+import com.cryptobasket.external.datacontract.ExternalTicker;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

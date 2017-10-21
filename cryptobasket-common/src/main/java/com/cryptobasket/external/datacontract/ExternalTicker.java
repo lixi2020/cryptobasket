@@ -1,4 +1,4 @@
-package com.cryptobasket.adapter.datacontract;
+package com.cryptobasket.external.datacontract;
 
 import java.sql.Timestamp;
 

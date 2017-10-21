@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-import com.cryptobasket.adapter.datacontract.ExternalTicker;
 import com.cryptobasket.constant.CryptoConstant;
+import com.cryptobasket.external.datacontract.ExternalTicker;
 import com.cryptobasket.pojo.Ticker;
 
 @Component
