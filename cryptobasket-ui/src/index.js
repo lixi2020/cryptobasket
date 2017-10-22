@@ -10,7 +10,7 @@ import Login from './components/login';
 import Register from './components/register';
 import reducers from './reducers';
 import Home from './components/common/home';
-import { OVERVIEW_URL,TREND_URL,DETAILS_URL} from './components/common/constant'
+import { OVERVIEW_URL,TREND_URL,DETAILS_URL,MARKET_URL} from './components/common/constant'
 
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
@@ -27,6 +27,7 @@ const createStoreWithMiddleware = applyMiddleware()(createStore);
             <Route path={`/${OVERVIEW_URL}`} component={Home} />
             <Route path={`/${TREND_URL}`} component={Home} />
             <Route path={`/${DETAILS_URL}`} component={Home} />
+            <Route path={`/${MARKET_URL}`} component={Home} />
             <Route path="/" component={Home} />
           </Switch>
         </div>

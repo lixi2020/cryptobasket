@@ -5,7 +5,8 @@ import Logout from './logout';
 import PortfolioDonut from '../portfolioDonut';
 import PortfolioLine from '../portfolioLine';
 import PortfolioTable from '../portfolioTable';
-import { OVERVIEW_URL,TREND_URL,DETAILS_URL} from './constant'
+import MarketTable from '../marketTable';
+import { OVERVIEW_URL,TREND_URL,DETAILS_URL,MARKET_URL} from './constant'
 
 export default class Home extends Component {
   constructor(props) {
@@ -25,6 +26,8 @@ export default class Home extends Component {
       return  <PortfolioLine />
     }else if(this.state.path==DETAILS_URL){
       return  <PortfolioTable />
+    }else if(this.state.path==MARKET_URL){
+      return  <MarketTable />
     }
   }
 

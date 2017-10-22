@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { OVERVIEW_URL,TREND_URL,DETAILS_URL} from './constant'
+import { OVERVIEW_URL,TREND_URL,DETAILS_URL,MARKET_URL} from './constant'
 export default class Nav extends Component {
     constructor(props) {
         super(props);
@@ -10,7 +10,7 @@ export default class Nav extends Component {
     render() {
         return (
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-                <a className="navbar-brand" href="#">Start Bootstrap</a>
+                <a className="navbar-brand" href="#">Cryptobasket</a>
                 <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                     aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -28,14 +28,22 @@ export default class Nav extends Component {
                             <a className="nav-link" href={TREND_URL}>
                                 <i className="fa fa-fw fa-area-chart"></i>
                                 <span className="nav-link-text">
-                                &nbsp;Charts</span>
+                                &nbsp;Trend</span>
                             </a>
                         </li>
                         <li className={this.props.path==DETAILS_URL?"nav-item active":"nav-item"} data-toggle="tooltip" data-placement="right" title="Tables">
                             <a className="nav-link" href={DETAILS_URL}>
                                 <i className="fa fa-fw fa-table"></i>
                                 <span className="nav-link-text">
-                                &nbsp; Tables</span>
+                                &nbsp; Holding</span>
+                            </a>
+                        </li>
+
+                        <li className={this.props.path==MARKET_URL?"nav-item active":"nav-item"} data-toggle="tooltip" data-placement="right" title="Tables">
+                            <a className="nav-link" href={MARKET_URL}>
+                                <i className="fa fa-fw fa-table"></i>
+                                <span className="nav-link-text">
+                                &nbsp; Market</span>
                             </a>
                         </li>
                     </ul>
