@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
+import MarketReducer from './marketReducer';
 
 const rootReducer = combineReducers({
-  state: (state = {}) => state
+  tickers:MarketReducer
 });
 
 export default rootReducer;

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
+import promiseMiddleware from 'redux-promise-middleware';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 
@@ -13,7 +14,7 @@ import Home from './components/common/home';
 import { OVERVIEW_URL,TREND_URL,DETAILS_URL,MARKET_URL} from './components/common/constant'
 
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+const createStoreWithMiddleware = applyMiddleware(promiseMiddleware())(createStore);
 
 
 
