@@ -1,5 +1,6 @@
 package com.cryptobasket.external.datacontract;
 
-public class Request {
+import java.util.List;
 
+public class Request {
 }
