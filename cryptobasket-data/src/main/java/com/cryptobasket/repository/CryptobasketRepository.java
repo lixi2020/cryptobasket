@@ -14,56 +14,56 @@ import com.cryptobasket.repository.mapper.CryptoMapper;
 @Repository
 public class CryptobasketRepository implements ICryptobasketRepository {
 	@Autowired
-	private CryptoMapper CryptoMapper;
+	private CryptoMapper cryptoMapper;
 
 	@Override
 	public void saveCryptoMeta(CryptoMeta cryptoMeta) {
-		CryptoMapper.insertCryptoMeta(cryptoMeta);
+		cryptoMapper.insertCryptoMeta(cryptoMeta);
 	}
 
 	@Override
 	public void getCryptoMetaByNameId(String nameId) {
-		CryptoMapper.getCryptoMetaByNameId(nameId);
+		cryptoMapper.getCryptoMetaByNameId(nameId);
 	}
 
 	@Override
 	@CacheEvict(cacheNames = "Ticker", allEntries = true)
 	public void saveTickerLatest(Ticker ticker) {
-		CryptoMapper.insertTickerLatest(ticker);
+		cryptoMapper.insertTickerLatest(ticker);
 	}
 
 	@Override
 	@CacheEvict(cacheNames = "Ticker", allEntries = true)
 	public void saveTickerByMin(Ticker ticker) {
-		CryptoMapper.insertTickerByMin(ticker);
+		cryptoMapper.insertTickerByMin(ticker);
 	}
 
 	@Override
 	@CacheEvict(cacheNames = "Ticker", allEntries = true)
 	public void saveTickerByHour(Ticker ticker) {
-		CryptoMapper.insertTickerByHour(ticker);
+		cryptoMapper.insertTickerByHour(ticker);
 	}
 
 	@Override
 	@CacheEvict(cacheNames = "Ticker", allEntries = true)
 	public void saveTickerByDay(Ticker ticker) {
-		CryptoMapper.insertTickerByDay(ticker);
+		cryptoMapper.insertTickerByDay(ticker);
 	}
 
 	@Override
 	@CacheEvict(cacheNames = "Ticker", allEntries = true)
 	public void saveTickerByMonth(Ticker ticker) {
-		CryptoMapper.insertTickerByMonth(ticker);
+		cryptoMapper.insertTickerByMonth(ticker);
 	}
 
 	@Override
 	public void clearTickerLatest() {
-		CryptoMapper.clearTickerLatest();
+		cryptoMapper.clearTickerLatest();
 	}
 
 	@Override
 	@Cacheable("Ticker")
 	public List<Ticker> getTickers(int pageOffset, int pageSize) {
-		return CryptoMapper.getLatestTickers(pageOffset, pageSize);
+		return cryptoMapper.getLatestTickers(pageOffset, pageSize);
 	}
 }

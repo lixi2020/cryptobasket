@@ -2,6 +2,8 @@ package com.cryptobasket.pojo;
 
 public class User {
 
+	private int userId;
+
 	private String username;
 
 	private String password;
@@ -9,6 +11,24 @@ public class User {
 	private String email;
 
 	private String phone;
+
+	private UserStatus status;
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+	public UserStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(UserStatus status) {
+		this.status = status;
+	}
 
 	public String getUsername() {
 		return username;

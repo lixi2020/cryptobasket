@@ -12,6 +12,8 @@ public abstract class Handler<TRequest extends Request, TResponse extends Respon
 		// check if this role has access to requested resources
 	}
 
+	abstract void sanitizeRequest(TRequest request, TResponse response);
+
 	abstract void validateRequest(TRequest request, TResponse response);
 
 	abstract void processRequest(TRequest request, TResponse response);
@@ -24,6 +26,11 @@ public abstract class Handler<TRequest extends Request, TResponse extends Respon
 			return response;
 		}
 		authenticateReuqet(request, response);
+		if (ValidationErrorHelper.isContainAnyError(response)) {
+			return response;
+		}
+
+		sanitizeRequest(request, response);
 		if (ValidationErrorHelper.isContainAnyError(response)) {
 			return response;
 		}
