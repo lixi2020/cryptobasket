@@ -20,7 +20,7 @@ public class MarketDataAdapter implements IMarketDataAdapter {
 				ExternalTicker[].class);
 		List<Ticker> tickers = null;
 		if (externalTickers != null) {
-			tickers = new ArrayList<>();
+			tickers = new ArrayList();
 			for (ExternalTicker externalTicker : externalTickers) {
 				tickers.add(mapExternalTickerToInternalTicker(externalTicker));
 			}

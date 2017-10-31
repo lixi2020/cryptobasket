@@ -19,7 +19,7 @@ public class MarketController {
 	private IMarketPriceService marketPriceService;
 
 	@RequestMapping("/ticker")
-	public List<Ticker> greeting(@RequestParam(value = "pageOffset", defaultValue = "0") int pageOffset,
+	public List<Ticker> getMarketTickers(@RequestParam(value = "pageOffset", defaultValue = "0") int pageOffset,
 			@RequestParam(value = "pageSize", defaultValue = "100") int pageSize) {
 		System.out.println("pageOffset:" + pageOffset + "pageSize:" + pageSize);
 		return marketPriceService.getTickers(pageOffset, pageSize);

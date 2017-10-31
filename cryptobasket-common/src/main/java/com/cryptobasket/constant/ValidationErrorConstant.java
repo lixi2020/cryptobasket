@@ -9,4 +9,7 @@ public class ValidationErrorConstant {
 
 	public static final String INVALID_EMAIL_ERROR_CODE = "003";
 	public static final String INVALID_EMAIL_ERROR_MESSAGE = "Invalid Email";
+
+	public static final String USER_ALREADY_EXIST_CODE = "004";
+	public static final String USER_ALREADY_EXIST_MESSAGE = "Invalid Email";
 }

@@ -6,7 +6,6 @@ public class RegisterRequest extends Request {
 	private String username;
 	private String password;
 	private String email;
-	private String phone;
 
 	public String getUsername() {
 		return username;
@@ -32,12 +31,9 @@ public class RegisterRequest extends Request {
 		this.email = email;
 	}
 
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
+	@Override
+	public String toString() {
+		return "RegisterRequest [username=" + username + ", password=" + password + ", email=" + email + "]";
 	}
 
 }
