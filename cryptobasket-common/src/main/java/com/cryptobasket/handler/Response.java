@@ -1,6 +1,8 @@
-package com.cryptobasket.external.datacontract;
+package com.cryptobasket.handler;
 
 import java.util.List;
+
+import com.cryptobasket.external.datacontract.ValidationError;
 
 public class Response {
 	private List<ValidationError> erros;
