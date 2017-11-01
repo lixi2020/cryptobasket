@@ -22,9 +22,6 @@ public abstract class Handler<TRequest extends Request, TResponse extends Respon
 
 		TResponse response = initResponseAndOperationData(operationData);
 
-		if (ValidationErrorHelper.isContainAnyError(response)) {
-			return response;
-		}
 		authenticateReuqet(request, response);
 		if (ValidationErrorHelper.isContainAnyError(response)) {
 			return response;

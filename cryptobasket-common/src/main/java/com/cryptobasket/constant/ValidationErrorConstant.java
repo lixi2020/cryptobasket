@@ -10,6 +10,9 @@ public class ValidationErrorConstant {
 	public static final String INVALID_EMAIL_ERROR_CODE = "003";
 	public static final String INVALID_EMAIL_ERROR_MESSAGE = "Invalid Email";
 
-	public static final String USER_ALREADY_EXIST_CODE = "004";
-	public static final String USER_ALREADY_EXIST_MESSAGE = "Invalid Email";
+	public static final String USERNAME_ALREADY_IN_USE_CODE = "004";
+	public static final String USERNAME_ALREADY_IN_USE_MESSAGE = "Username Already In Use";
+
+	public static final String EMAIL_ALREADY_IN_USE_CODE = "005";
+	public static final String EMAIL_ALREADY_IN_USE_MESSAGE = "Email Already Registered";
 }

@@ -7,5 +7,5 @@ public interface IUserRepository {
 	void insertUser(User user);
 	void updateUserStatus(String username,UserStatus status);
 	UserStatus getUserStatus(String username);
-	User getUserByUsername(String username);
+	public User getUserByUsernameOrEmail(String username, String email);
 }

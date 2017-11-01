@@ -7,14 +7,13 @@ import com.cryptobasket.constant.StringTool;
 import com.cryptobasket.constant.ValidationConstant;
 import com.cryptobasket.constant.ValidationErrorConstant;
 import com.cryptobasket.constant.ValidationHelper;
-import com.cryptobasket.external.datacontract.EnrollOperationData;
 import com.cryptobasket.external.datacontract.RegisterRequest;
 import com.cryptobasket.external.datacontract.RegisterResponse;
 import com.cryptobasket.pojo.User;
 import com.cryptobasket.repository.IUserRepository;
 
 @Component
-public class RegisterHandler extends Handler<RegisterRequest, RegisterResponse, EnrollOperationData> {
+public class RegisterHandler extends Handler<RegisterRequest, RegisterResponse, OperationData> {
 
 	@Autowired
 	private IUserRepository userRepository;
@@ -43,10 +42,16 @@ public class RegisterHandler extends Handler<RegisterRequest, RegisterResponse, 
 	@Override
 	void validateRequest(RegisterRequest request, RegisterResponse response) {
 		// Validate User Existence
-		User user = userRepository.getUserByUsername(request.getUsername());
+		User user = userRepository.getUserByUsernameOrEmail(request.getUsername(), request.getEmail());
 		if (user != null) {
-			ValidationHelper.addValidationError(response, ValidationErrorConstant.USER_ALREADY_EXIST_CODE,
-					ValidationErrorConstant.USER_ALREADY_EXIST_MESSAGE);
+			if (user.getUsername().equals(request.getUsername())) {
+				ValidationHelper.addValidationError(response, ValidationErrorConstant.USERNAME_ALREADY_IN_USE_CODE,
+						ValidationErrorConstant.USERNAME_ALREADY_IN_USE_MESSAGE);
+			}
+			if (user.getEmail().equals(request.getEmail())) {
+				ValidationHelper.addValidationError(response, ValidationErrorConstant.EMAIL_ALREADY_IN_USE_CODE,
+						ValidationErrorConstant.EMAIL_ALREADY_IN_USE_MESSAGE);
+			}
 		}
 	}
 

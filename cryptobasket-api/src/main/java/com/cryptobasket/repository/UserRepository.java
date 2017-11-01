@@ -33,8 +33,8 @@ public class UserRepository implements IUserRepository {
 	}
 
 	@Override
-	public User getUserByUsername(String username) {
-		return userMapper.getUserByUserName(username);
+	public User getUserByUsernameOrEmail(String username, String email) {
+		return userMapper.getUserByUserNameOrEmail(username, email);
 	}
 
 }
