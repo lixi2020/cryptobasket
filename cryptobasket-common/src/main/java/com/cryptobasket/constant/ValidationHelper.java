@@ -15,10 +15,10 @@ public class ValidationHelper {
 	}
 
 	public static void addValidationError(Response resp, String errorCode, String errorMsg) {
-		if (resp.getErros() == null) {
-			resp.setErros(new ArrayList<ValidationError>());
+		if (resp.getErrors() == null) {
+			resp.setErrors(new ArrayList<ValidationError>());
 		}
 		ValidationError validationError = new ValidationError(errorCode, errorMsg);
-		resp.getErros().add(validationError);
+		resp.getErrors().add(validationError);
 	}
 }

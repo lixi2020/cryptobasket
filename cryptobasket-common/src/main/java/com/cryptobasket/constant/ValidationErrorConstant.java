@@ -15,4 +15,7 @@ public class ValidationErrorConstant {
 
 	public static final String EMAIL_ALREADY_IN_USE_CODE = "005";
 	public static final String EMAIL_ALREADY_IN_USE_MESSAGE = "Email Already Registered";
+
+	public static final String NO_USER_FOUND_CODE = "006";
+	public static final String NO_USER_FOUND_MESSAGE = "Incorrect Password or No User Found";
 }

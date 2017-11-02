@@ -5,7 +5,7 @@ import com.cryptobasket.handler.Response;
 public class ValidationErrorHelper {
 	public static boolean isContainAnyError(Response response) {
 		if (response != null) {
-			if (response.getErros() != null && response.getErros().size() > 0) {
+			if (response.getErrors() != null && response.getErrors().size() > 0) {
 				return true;
 			}
 		}

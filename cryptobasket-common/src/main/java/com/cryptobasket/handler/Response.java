@@ -9,14 +9,15 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 @JsonInclude(Include.NON_NULL)
 public class Response {
-	private List<ValidationError> erros;
+	private List<ValidationError> errors;
 
-	public List<ValidationError> getErros() {
-		return erros;
+	public List<ValidationError> getErrors() {
+		return errors;
 	}
 
-	public void setErros(List<ValidationError> erros) {
-		this.erros = erros;
+	public void setErrors(List<ValidationError> errors) {
+		this.errors = errors;
 	}
+
 
 }

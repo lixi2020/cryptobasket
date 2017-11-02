@@ -1,4 +1,4 @@
-import { FETCH_TICKERS } from '../actions/ticker';
+import { FETCH_TICKERS } from '../actions';
 import _ from 'lodash';
 
 
@@ -12,10 +12,11 @@ export default function (state = {}, action) {
             return state;
         case `${FETCH_TICKERS}_FULFILLED`://append to old state
             console.log('Fetch Ticker Resilved...');
+            console.log(action)
             console.log(action.payload);
             return _.mapKeys(action.payload.data, 'rank');;
         default:
-            console.log("Default Action!");
+            //console.log(action);
             return state;
     }
 }

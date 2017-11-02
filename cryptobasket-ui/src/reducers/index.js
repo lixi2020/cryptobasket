@@ -1,8 +1,13 @@
 import { combineReducers } from 'redux';
-import MarketReducer from './marketReducer';
+import { reducer as formReducer } from 'redux-form';
+import marketReducer from './marketReducer';
+import loginReducer from './loginReducer';
+
 
 const rootReducer = combineReducers({
-  tickers:MarketReducer
+  tickers: marketReducer,
+  loginState: loginReducer,
+  form: formReducer
 });
 
 export default rootReducer;
