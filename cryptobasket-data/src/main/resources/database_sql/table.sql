@@ -208,3 +208,26 @@ DEFAULT CHARACTER SET = utf8;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+-- -----------------------------------------------------
+-- Schema crypto_basket
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `crypto_basket` DEFAULT CHARACTER SET utf8 ;
+USE `crypto_basket` ;
+
+-- -----------------------------------------------------
+-- Table `crypto_basket`.`crypto_ticker_history_last_7_day`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `crypto_basket`.`crypto_ticker_history_last_7_day` (
+  `nameId` VARCHAR(100) NOT NULL,
+  `last7DayPrice` VARCHAR(8000) NOT NULL,
+  PRIMARY KEY (`nameId`),
+  UNIQUE INDEX `nameId_UNIQUE` (`nameId` ASC))
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+

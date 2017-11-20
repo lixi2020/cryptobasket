@@ -1,16 +1,20 @@
 package com.cryptobasket.demo;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.test.context.junit4.SpringRunner;
-
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mybatis.spring.boot.test.autoconfigure.MybatisTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.test.context.junit4.SpringRunner;
 
+import com.cryptobasket.helper.DateUtil;
 import com.cryptobasket.pojo.Ticker;
 import com.cryptobasket.repository.mapper.CryptoMapper;
 
@@ -110,6 +114,12 @@ public class CryptobasketDAOTest {
 		ticker.setTotalSupply(new BigDecimal(2323));
 		ticker.setVolume24hUSD(new BigDecimal(232323));
 		cryptoMapper.insertTickerByMonth(ticker);
+	}
+	
+	@Test
+	public void getLast7daysTickers() {
+		Date currentDate = new Date(Calendar.getInstance().getTime().getTime());
+		cryptoMapper.getTickersByTimeRange(DateUtil.addDays(currentDate, -7), currentDate);
 	}
 
 }

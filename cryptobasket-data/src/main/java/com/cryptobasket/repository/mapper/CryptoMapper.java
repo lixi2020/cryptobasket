@@ -1,5 +1,6 @@
 package com.cryptobasket.repository.mapper;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Delete;
@@ -61,4 +62,10 @@ public interface CryptoMapper {
 			+ "VALUES(#{nameId},#{rank},#{priceUSD},#{priceBTC},#{volume24hUSD},#{marketCapUSD},#{availableSupply},#{totalSupply},"
 			+ "#{percentChange1h},#{percentChange24h},#{percentChange7d},#{lastUpdateTime});")
 	void insertTickerByMonth(Ticker ticker);
+
+	@Select("SELECT * FROM crypto_basket.crypto_ticker_history_hour WHERE lastUpdateTime BETWEEN #{startDate} AND #{endDate};")
+	List<Ticker> getTickersByTimeRange(@Param("startDate") Date startDate, @Param("endDate") Date endDate);
+
+	@Insert("REPLACE INTO crypto_basket.crypto_ticker_history_last_7_day(nameId,last7dayPrice)VALUES(#{nameId},#{last7dayPrice});")
+	void updateLast7daysPrice(@Param("nameId")String nameId, @Param("last7dayPrice")String last7dayPrice);
 }
